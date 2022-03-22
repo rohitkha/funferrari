@@ -1,0 +1,39 @@
+.login-page {
+  background-color: rgb(21, 21, 21);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.login-inner {
+  position: relative;
+  top: 20%;
+  transform: (-70%);
+}
+.logo {
+  margin-bottom: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.logo > img {
+  width: 100%;
+  max-width: 30%;
+  /* height: 400px; */
+}
+.nav-link {
+  color: white;
+  float: right;
+  margin-top: -15px;
+  cursor: pointer;
+}
+input::placeholder {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  font-weight: 400;
+}
+#exampleCheck1 {
+  border: 2px solid rgb(252, 182, 20);
+  background-color: black;
+}

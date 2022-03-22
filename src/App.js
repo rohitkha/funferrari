@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+import Login from "./component/Login/Login";
+import Home from "./component/Home";
+import SingleSite from "./component/SingleSite";
+import Footer from "./component/Footer";
+import Transaction from "./component/Transaction";
 
 function App() {
+  const [Auth, setAuth] = useState(false);
+
+  let token = localStorage.getItem("token");
+  useEffect(() => {
+    if (!token) {
+      setAuth(false);
+    } else {
+      setAuth(true);
+    }
+  }, [token]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/single/:id" component={SingleSite} />
+        <Route exact path="/transactions" component={Transaction} />
+      </Switch>
+      {Auth && <Footer />}
     </div>
   );
 }
