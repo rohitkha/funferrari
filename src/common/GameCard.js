@@ -19,6 +19,8 @@ const GameCard = (props) => {
   };
   console.log(siteList);
   return (
+<div className="container-fluid">
+
     <div className="mobile-device">
       {siteList.map((ele) => (
         <div className="block">
@@ -37,7 +39,7 @@ const GameCard = (props) => {
               <div
                 className="block-view-button btn"
                 onClick={() => History.push(`/single/${ele.id}`)}
-              >
+                >
                 View
               </div>
               <div className="block-getid-button">
@@ -50,6 +52,7 @@ const GameCard = (props) => {
         </div>
       ))}
     </div>
+      </div>
   );
 };
 
