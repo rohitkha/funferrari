@@ -3,7 +3,8 @@ import "./Login.css";
 import FunFerrari400 from "../../assets/funferrai400.png";
 import { sendOTP, verifyOTP } from "../../helpers/apiHelper";
 import { useHistory } from "react-router-dom";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Login() {
   const [Agree, setAgree] = useState(false);
   const [Mobile, setMobile] = useState("");
@@ -57,10 +58,11 @@ function Login() {
           </div>
           <p
             className="nav-link link-light"
-            onClick={() => sendOTP(Obj).then((res) => alert(res.data.otp))}
+            onClick={() => sendOTP(Obj).then((res) => toast(res.data.otp))}
           >
             Send OTP
           </p>
+          <ToastContainer />
           <div className="mb-3">
             <input
               type="text"

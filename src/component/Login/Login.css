@@ -1,12 +1,9 @@
 .login-page {
   background-color: rgb(21, 21, 21);
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
 }
 .login-inner {
+  height: 100vh;
   position: relative;
   top: 20%;
   transform: (-70%);
@@ -35,5 +32,5 @@ input::placeholder {
 }
 #exampleCheck1 {
   border: 2px solid rgb(252, 182, 20);
-  background-color: black;
+  background-color: rgb(21, 21, 21);
 }

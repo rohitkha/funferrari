@@ -54,7 +54,14 @@ hr:not([size]) {
 
 .block-description {
   width: 100%;
-  height: 7vh;
+  height: 8vh;
   font-size: 11px;
   color: rgb(110, 132, 163);
+}
+
+/* media query for mobile device */
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: row;
+  }
 }

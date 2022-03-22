@@ -21,6 +21,7 @@
 
 .offer-description {
   width: 100%;
+  height: 10vh;
   font-size: 11px;
   color: rgb(110, 132, 163);
 }
