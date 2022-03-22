@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./GameCard.css";
 import { useHistory } from "react-router-dom";
-
+// import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const GameCard = (props) => {
   const History = useHistory();
 
