@@ -72,7 +72,7 @@ const Home = () => {
         {offersList.map((ele) => (
         <Carousel.Item interval={1000}>
           <img
-            className="d-block w-100"
+            className="d-block w-100 banner"
             src={ele}
             alt="First slide"
             />
@@ -84,7 +84,7 @@ const Home = () => {
       <div className="container-fluid">
         <div className="row">
           {/*sitelist  */}
-          <p>PlatFrom</p>
+          <p class="home-title">PlatFrom</p>
           {siteList.map((data) => {
             if (siteList.length > 0) {
               return (
@@ -103,7 +103,7 @@ const Home = () => {
 
         {/* promotion */}
         <div className="row">
-          <p>Offer</p>
+          <p class="home-title">Offer</p>
           {promotionList.map((data) => {
             if (promotionList.length > 0) {
               return (
@@ -118,7 +118,14 @@ const Home = () => {
             }
           })}
         </div>
-      </div>
+        
+      <div className="row">
+            <div className="support-help">
+              <p>For any support please </p>
+              <a target='_blank' className="btn btn-warning " href={'https://wa.me/919097415163'}>Click Here</a>
+            </div>
+          </div>
+        </div>
     </>
   );
 };
