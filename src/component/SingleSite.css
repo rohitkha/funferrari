@@ -1,18 +1,14 @@
 .main {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 30%;
+  margin: 20px 200px;
 }
 .main-img {
-  margin: auto;
   width: 100%;
-  max-width: 50%;
   height: 350px;
   border-radius: 20px;
 }
 .main-content {
   width: 100%;
-  max-width: 50%;
+  margin: 5px;
 }
 
 .main-name {
@@ -28,7 +24,7 @@ p {
 }
 .main-description {
   width: 100%;
-  height: 7vh;
+  height: 5vh;
   font-size: 11px;
   color: rgb(110, 132, 163);
 }
@@ -46,9 +42,45 @@ h6 {
   width: 100%;
   background-color: rgb(252, 182, 20);
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .main-button > .btn {
   border: none;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .main {
+    margin: 20px 50px;
+  }
+  .main-description {
+    height: 10vh;
+  }
+  .main-img {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+  }
+  .main-content {
+    width: 100%;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .main {
+    margin: 20px 0;
+  }
+  .main-description {
+    height: 12vh;
+  }
+  .main-img {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+  }
+  .main-content {
+    width: 100%;
+    margin: 5px;
+  }
 }

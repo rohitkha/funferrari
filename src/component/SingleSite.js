@@ -16,8 +16,7 @@ function SingleSite(props) {
     <>
       <Navbar />
       <div className="container-fluid">
-        <div className="row">
-          <div className="col">
+      
             <div className="main">
               <div className="main-inner">
                 <img
@@ -39,8 +38,7 @@ function SingleSite(props) {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+         
       </div>
     </>
   );
