@@ -9,7 +9,7 @@ import {
 import axios from "axios";
 import GameCard from "../common/GameCard";
 import OfferCard from "../common/OfferCard";
-import Carousel from 'react-elastic-carousel';
+import { Carousel } from "react-bootstrap";
 
 const Home = () => {
   const [offersList, setOffersList] = useState([]);
@@ -67,27 +67,19 @@ const Home = () => {
   return (
     <>
       <Navbar />
-       <Carousel>
-         {offersList.map((ele) => (
-          <img src={ele} className="d-block w-100" alt="..." />
-         ))}
-      </Carousel>
-      {/* <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        {offersList.map((ele) => (
-          <>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src={ele} className="d-block w-100" alt="..." />
-              </div>
-            </div>
-          </>
-        ))}
-      </div> */}
 
+      <Carousel>
+        {offersList.map((ele) => (
+        <Carousel.Item interval={1000}>
+          <img
+            className="d-block w-100"
+            src={ele}
+            alt="First slide"
+            />
+        </Carousel.Item>
+            ))}
+      </Carousel>
+     
       {/* main body */}
       <div className="container-fluid">
         <div className="row">
