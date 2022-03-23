@@ -28,7 +28,13 @@ function Learn() {
         </div>
       </nav>
       <div className="container-fluid" style={{ padding: "15px" }}>
-        <h6 style={{ fontSize: "14px", whiteSpace: "pre-wrap" }}>
+        <h6
+          style={{
+            fontSize: "14px",
+            whiteSpace: "pre-wrap",
+            color: "rgb(110, 132, 163)",
+          }}
+        >
           No Complaint found
         </h6>
       </div>

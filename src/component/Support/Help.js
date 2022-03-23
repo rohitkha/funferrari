@@ -26,8 +26,12 @@ function Help() {
             Support
           </h1>
           <button
-            className="btn btn-primary"
-            style={{ margin: "-0.5rem 0 0.5rem" }}
+            className="btn"
+            style={{
+              margin: "-0.5rem 0 0.5rem",
+              backgroundColor: "#2196f3",
+              color: "white",
+            }}
             onClick={() => History.push("/add-complaint")}
           >
             Add Complaint
@@ -35,7 +39,13 @@ function Help() {
         </div>
       </nav>
       <div className="container-fluid" style={{ padding: "15px" }}>
-        <h6 style={{ fontSize: "14px", whiteSpace: "pre-wrap" }}>
+        <h6
+          style={{
+            fontSize: "14px",
+            whiteSpace: "pre-wrap",
+            color: "rgb(110, 132, 163)",
+          }}
+        >
           No Complaint found
         </h6>
       </div>

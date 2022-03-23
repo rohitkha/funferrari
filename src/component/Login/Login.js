@@ -5,6 +5,7 @@ import { sendOTP, verifyOTP } from "../../helpers/apiHelper";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function Login() {
   const [Agree, setAgree] = useState(false);
   const [Mobile, setMobile] = useState("");
@@ -12,15 +13,14 @@ function Login() {
 
   const History = useHistory();
 
-  let token = localStorage.getItem("token");
-
   useEffect(() => {
+    let token = localStorage.getItem("token");
     if (!token) {
       History.push("/");
     } else {
       History.push("/home");
     }
-  }, [token]);
+  }, []);
 
   const Obj = {
     otp: OTP,
@@ -33,20 +33,19 @@ function Login() {
     verifyOTP(Obj).then((res) => {
       if (res.status === 200) {
         localStorage.setItem("token", res.data.access_token);
-        History.push("/home");
         window.location.reload();
       }
     });
   };
 
   return (
-    <div className="container-fluid login-page">
+    <div className="login-page">
       <div className="container login-inner">
         <div className="logo">
           <img src={FunFerrari400} alt="logo" />
         </div>
         <form className="login">
-          <div className="mb-3">
+          <div>
             <input
               type="text"
               className="form-control p-2"
@@ -62,7 +61,17 @@ function Login() {
           >
             Send OTP
           </p>
-          <ToastContainer />
+          <ToastContainer
+            position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <div className="mb-3">
             <input
               type="text"
@@ -79,11 +88,11 @@ function Login() {
               id="exampleCheck1"
               onClick={() => setAgree((prev) => !prev)}
             />
-            <label htmlfor="exampleCheck1" style={{ color: "white" }}>
+            <label Htmlor="exampleCheck1" style={{ color: "white" }}>
               I agree terms & condition
             </label>
           </div>
-          <div className="d-grid gap-2">
+          <div className="d-grid">
             {Agree && (
               <button
                 type="submit"
@@ -110,5 +119,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

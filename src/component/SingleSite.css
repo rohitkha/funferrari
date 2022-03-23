@@ -45,8 +45,9 @@ h6 {
   border-radius: 15px;
 }
 
-.main-button > .btn {
-  border: none;
+.main-button > a {
+  text-decoration: none;
+  color: white;
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {

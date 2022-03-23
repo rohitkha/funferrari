@@ -16,29 +16,29 @@ function SingleSite(props) {
     <>
       <Navbar />
       <div className="container-fluid">
-      
-            <div className="main">
-              <div className="main-inner">
-                <img
-                  className="main-img"
-                  src={`${axios.defaults.baseURL}/${Data.image}`}
-                  alt=""
-                />
-              </div>
-              <div className="main-content">
-                <div className="main-name">{Data.name}</div>
-                <p>Min Buy: {Data.min_refill}</p>
-                <div className="payment-mode">{Data.payment_text}</div>
-                <hr />
-                <h6>About Platform</h6>
-                <div className="main-description">{Data.description}</div>
-                <h6>Game Offered</h6>
-                <div className="main-button btn ">
-                  <a target='_blank' className="btn" href={'https://wa.me/919097415163'}>get ID</a>
-                </div>
-              </div>
+        <div className="main">
+          <div className="main-inner">
+            <img
+              className="main-img"
+              src={`${axios.defaults.baseURL}/${Data.image}`}
+              alt=""
+            />
+          </div>
+          <div className="main-content">
+            <div className="main-name">{Data.name}</div>
+            <p>Min Buy: {Data.min_refill}</p>
+            <div className="payment-mode">{Data.payment_text}</div>
+            <hr />
+            <h6>About Platform</h6>
+            <div className="main-description">{Data.description}</div>
+            <h6>Game Offered</h6>
+            <div className="main-button btn ">
+              <a target="_blank" href={"https://wa.me/919097415163"}>
+                Get ID
+              </a>
             </div>
-         
+          </div>
+        </div>
       </div>
     </>
   );

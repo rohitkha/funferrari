@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const History = useHistory();
 
   return (
@@ -39,7 +39,7 @@ const Navbar = () => {
             onClick={() => {
               localStorage.removeItem("token");
               History.push("/");
-              // window.location.reload();
+              window.location.reload();
             }}
           >
             <span className="material-icons" style={{ color: "white" }}>

@@ -1,28 +1,22 @@
 .login-page {
   background-color: rgb(21, 21, 21);
-  position: absolute;
-}
-.login-inner {
   height: 100vh;
-  position: relative;
-  top: 20%;
-  transform: (-70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .logo {
-  margin-bottom: 50px;
-  margin: auto;
   display: flex;
   justify-content: center;
 }
 .logo > img {
   width: 100%;
   max-width: 30%;
-  /* height: 400px; */
 }
 .nav-link {
   color: white;
   float: right;
-  margin-top: -15px;
   cursor: pointer;
 }
 input::placeholder {

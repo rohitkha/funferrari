@@ -10,16 +10,19 @@ import Transaction from "./component/Transaction";
 import Help from "./component/Support/Help";
 import Learn from "./component/Learn";
 import AddComplaint from "./component/Support/AddComplaint";
+
 function App() {
   const [Auth, setAuth] = useState(false);
+
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
-    let token = localStorage.getItem("token");
-    if (!token) {
-      setAuth(false);
-    } else {
+    if (token) {
       setAuth(true);
+    } else {
+      setAuth(false);
     }
-  }, []);
+  }, [token]);
 
   return (
     <div className="App">
@@ -30,8 +33,7 @@ function App() {
         <Route exact path="/transactions" component={Transaction} />
         <Route exact path="/help" component={Help} />
         <Route exact path="/learn" component={Learn} />
-
-       <Route exact path="/add-complaint" component={AddComplaint} />
+        <Route exact path="/add-complaint" component={AddComplaint} />
       </Switch>
       {Auth && <Footer />}
     </div>
