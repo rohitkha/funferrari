@@ -37,13 +37,12 @@ const GameCard = (props) => {
   }, []);
   const fetchSite = async () => {
     const { data } = await getSite();
-    if (data?.data?.data?.length) {
-      const siteListData = data.data.data;
 
-      const newData = FormatCard(siteListData, NumOfColumn);
+    const siteListData = data.data.data;
 
-      setSiteList(newData);
-    }
+    const newData = FormatCard(siteListData, NumOfColumn);
+
+    setSiteList(newData || []);
   };
 
   return (
@@ -80,7 +79,7 @@ const GameCard = (props) => {
                       View
                     </div>
                     <div className="block-getid-button">
-                      <a target="_blank" href={"https://wa.me/919097415163"}>
+                      <a target="_blank" href={"https://wa.me/+909150165000"}>
                         Get ID
                       </a>
                     </div>

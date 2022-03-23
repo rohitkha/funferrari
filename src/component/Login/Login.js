@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Login.css";
 import FunFerrari400 from "../../assets/funferrai400.png";
-import { sendOTP, verifyOTP } from "../../helpers/apiHelper";
+import {
+  sendOTP,
+  verifyOTP,
+  registerOTP,
+  checkNumber,
+} from "../../helpers/apiHelper";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,6 +31,14 @@ function Login() {
     otp: OTP,
     mobile: Mobile,
     country_code: "IN",
+  };
+
+  const SendOTPHandler = async () => {
+    const user_number = await checkNumber(Obj);
+    if (user_number.data["code"] === 200) {
+      await registerOTP(Obj);
+    }
+    sendOTP(Obj).then((res) => toast(res.data.otp));
   };
 
   const LoginHandler = (e) => {
@@ -55,10 +68,7 @@ function Login() {
               onChange={(event) => setMobile(event.target.value)}
             />
           </div>
-          <p
-            className="nav-link link-light"
-            onClick={() => sendOTP(Obj).then((res) => toast(res.data.otp))}
-          >
+          <p className="nav-link link-light" onClick={SendOTPHandler}>
             Send OTP
           </p>
           <ToastContainer

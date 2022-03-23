@@ -35,10 +35,12 @@ const Mycard = () => {
 
   const fetchActiveID = async () => {
     const { data } = await getUserWebsiteID();
-    if (data?.data?.data?.length) {
-      const activeListData = data.data.data;
-      setActiveIDList(activeListData);
-    }
+
+    const activeListData = data.data.data;
+
+    const newData = FormatCard(activeListData, NumOfColumn);
+
+    setActiveIDList(newData || []);
   };
 
   return (

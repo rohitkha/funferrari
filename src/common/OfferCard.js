@@ -36,13 +36,12 @@ const OfferCard = () => {
 
   const fetchPromotions = async () => {
     const { data } = await getPromotions();
-    if (data?.data?.data?.length) {
-      const promotionList = data.data.data;
 
-      const newData = FormatCard(promotionList, NumOfColumn);
+    const promotionList = data.data.data;
 
-      setPromotionList(newData);
-    }
+    const newData = FormatCard(promotionList, NumOfColumn);
+
+    setPromotionList(newData || []);
   };
 
   return (
@@ -51,7 +50,12 @@ const OfferCard = () => {
       <div className="mobile-card-device">
         {promotionList.map((ele) => {
           if (ele.empty) {
-            return <div className="block" style={{ boxShadow: "none" }}></div>;
+            return (
+              <div
+                className="offer offer-empty"
+                style={{ boxShadow: "none" }}
+              ></div>
+            );
           } else {
             return (
               <div className="offer" key={ele.id}>

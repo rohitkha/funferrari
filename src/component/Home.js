@@ -63,7 +63,18 @@ const Home = () => {
         >
           For Any Support Please
         </p>
-        <div className="btn btn-warning">Click Here</div>
+        <a
+          target="_blank"
+          href="https://wa.me/+909150165000"
+          className="btn"
+          style={{
+            textDecoration: "none",
+            backgroundColor: "rgb(252, 182, 20)",
+            color: "black",
+          }}
+        >
+          Click Here
+        </a>
       </div>
     </>
   );

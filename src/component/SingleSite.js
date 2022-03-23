@@ -32,11 +32,13 @@ function SingleSite(props) {
             <h6>About Platform</h6>
             <div className="main-description">{Data.description}</div>
             <h6>Game Offered</h6>
-            <div className="main-button btn ">
-              <a target="_blank" href={"https://wa.me/919097415163"}>
-                Get ID
-              </a>
-            </div>
+            <a
+              target="_blank"
+              href={"https://wa.me/+909150165000"}
+              className="main-button btn "
+            >
+              Get ID
+            </a>
           </div>
         </div>
       </div>
