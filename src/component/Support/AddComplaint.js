@@ -4,20 +4,21 @@ function AddComplaint() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
+  const [remark, setRemark] = useState("");
 
   let formData = new FormData();
   formData.append("title", title);
   formData.append("description", description);
+  formData.append("remark", remark);
   formData.append("image", image);
+  console.log(formData);
 
   const SubmitHandler = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const { data } = await getComplaint(formData);
-    console.log("data", data);
     // // alert(data.message);
     // window.location.reload();
   };
-  console.log(title);
 
   return (
     <>
@@ -75,6 +76,20 @@ function AddComplaint() {
           <div className="col-sm-12 col-md-12 col-lg-12">
             <div className="mb-3">
               <label htmlFor="exampleInputUsername" className="form-label">
+                Remark
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="exampleInputUsername"
+                name="remark"
+                onChange={(e) => setRemark(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-12">
+            <div className="mb-3">
+              <label htmlFor="exampleInputUsername" className="form-label">
                 Image
               </label>
               <input
@@ -82,7 +97,7 @@ function AddComplaint() {
                 className="form-control"
                 id="exampleInputUsername"
                 name="image"
-                onChange={(e) => setImage(e.target.value)}
+                onChange={(e) => setImage(e.target.files[0])}
               />
             </div>
           </div>
