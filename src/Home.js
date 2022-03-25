@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import { getOffers, getUserWebsiteID } from "../helpers/apiHelper";
+import Navbar from "./common/Navbar";
+import { getOffers } from "./helpers/apiHelper";
 import axios from "axios";
-import GameCard from "../common/GameCard";
 import { Carousel } from "react-bootstrap";
-import OfferCard from "../common/OfferCard";
-
+import GameCard from "./component/GameCard/GameCard";
+import OfferCard from "./component/OfferCard/OfferCard";
 const Home = () => {
   const [offersList, setOffersList] = useState([]);
-  const [activeIDList, setActiveIDList] = useState([]);
 
   useEffect(() => {
     fetchOffers();
-    fetchActiveID();
   }, []);
 
   const fetchOffers = async () => {
@@ -29,17 +26,10 @@ const Home = () => {
     }
   };
 
-  const fetchActiveID = async () => {
-    const { data } = await getUserWebsiteID();
-    if (data?.data?.data?.length) {
-      const activeListData = data.data.data;
-      setActiveIDList(activeListData);
-    }
-  };
   return (
     <>
       <Navbar />
-      <Carousel>
+      <Carousel controls={false}>
         {offersList.map((ele, index) => (
           <Carousel.Item interval={1000} key={index}>
             <img className="d-block w-100 banner" src={ele} alt="First slide" />
@@ -48,6 +38,7 @@ const Home = () => {
       </Carousel>
       <GameCard />
       <OfferCard />
+
       <div
         className="helper"
         style={{ display: "flex", justifyContent: "center" }}

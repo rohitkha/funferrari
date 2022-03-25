@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./OfferCard.css";
-import { getPromotions } from "../helpers/apiHelper";
+import { getPromotions } from "../../helpers/apiHelper";
 // import axios from "axios";
 const OfferCard = () => {
   const [promotionList, setPromotionList] = useState([]);

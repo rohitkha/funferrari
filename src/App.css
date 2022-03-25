@@ -23,7 +23,15 @@
   font-size: 1rem;
 }
 
+.active1 {
+  border-bottom: 3px solid rgb(0, 122, 255);
+}
+
 .active {
+  color: rgb(0, 122, 255);
+}
+
+.active:focus {
   color: rgb(0, 122, 255);
 }
 
@@ -110,5 +118,25 @@
   font-weight: 400;
 }
 
-.trans-active {
+/* sidebar */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-item {
+  list-style: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(110, 132, 163);
+}
+
+.sidebar-title {
+  padding-left: 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(110, 132, 163);
+}
+
+.carousel-indicators {
+  visibility: hidden;
 }

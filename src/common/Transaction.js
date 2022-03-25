@@ -9,41 +9,49 @@ function Transcation() {
     <>
       <nav style={{ backgroundColor: "black" }}>
         <ul className="nav nav-pills nav-justified">
-          <li className="nav-item ">
+          <li
+            className={toggleState === 1 ? "nav-item active1" : "nav-item"}
+            onClick={() => toggleDiv(1)}
+            style={{ cursor: "pointer" }}
+          >
             <p
-              className={toggleState === 1 ? "link-light active" : "link-light"}
+              className={"link-light"}
               style={{
                 paddingTop: "8px",
                 fontSize: ".8rem",
-                cursor: "pointer",
               }}
-              onClick={() => toggleDiv(1)}
             >
               ALL
             </p>
           </li>
-          <li className="nav-item">
+          <li
+            className={toggleState === 2 ? "nav-item active1" : "nav-item"}
+            onClick={() => toggleDiv(2)}
+            style={{ cursor: "pointer" }}
+          >
             <p
-              className={toggleState === 2 ? "link-light active" : "link-light"}
+              className={"link-light"}
               style={{
                 fontSize: ".8rem",
                 paddingTop: "8px",
                 cursor: "pointer",
               }}
-              onClick={() => toggleDiv(2)}
             >
               DIPOSIT
             </p>
           </li>
-          <li className="nav-item">
+          <li
+            className={toggleState === 3 ? "nav-item active1" : "nav-item"}
+            onClick={() => toggleDiv(3)}
+            style={{ cursor: "pointer" }}
+          >
             <p
-              className={toggleState === 3 ? "link-light active" : "link-light"}
+              className={"link-light"}
               style={{
                 fontSize: ".8rem",
                 paddingTop: "8px",
                 cursor: "pointer",
               }}
-              onClick={() => toggleDiv(3)}
             >
               WITHDRAW
             </p>

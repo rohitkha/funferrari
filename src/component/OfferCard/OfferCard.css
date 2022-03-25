@@ -2,12 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   flex-basis: content;
-  /* justify-content: space-evenly; */
   justify-content: space-between;
   margin-top: 20px;
 }
 .mobile-card-device::-webkit-scrollbar {
-  /* width: 0; */
+  width: 0;
 }
 
 .offer {

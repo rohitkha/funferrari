@@ -6,7 +6,7 @@
   margin-top: 20px;
 }
 .mobile-device::-webkit-scrollbar {
-  /* width: 0; */
+  width: 0;
 }
 
 .block {
@@ -115,7 +115,7 @@ hr:not([size]) {
     margin-bottom: 15px;
   }
   .block-description {
-    height: 12vh;
+    height: 8vh;
   }
   .block-empty {
     display: none;
@@ -138,9 +138,15 @@ hr:not([size]) {
     margin-bottom: 15px;
   }
   .block-description {
-    height: 12vh;
+    height: 6vh;
   }
   .block-empty {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .block-description {
+    height: 6vh;
   }
 }

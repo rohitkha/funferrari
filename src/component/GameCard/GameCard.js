@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./GameCard.css";
 import { useHistory } from "react-router-dom";
-import { getSite } from "../helpers/apiHelper";
+import { getSite } from "../../helpers/apiHelper";
 // import { Link } from "react-router-dom/cjs/react-router-dom.min";
 const GameCard = (props) => {
   const History = useHistory();
@@ -53,6 +53,7 @@ const GameCard = (props) => {
           if (ele.empty) {
             return (
               <div
+                key={index}
                 className="block block-empty"
                 style={{ boxShadow: "none" }}
               ></div>

@@ -48,8 +48,14 @@ export const getSiteByID = (id) => {
   //  single platform list data
   return axios.get(`/api/user/websites/${id}`);
 };
+
 export const getUser = () => {
+  //get user data
   return axios.get("/api/user");
+};
+export const editUser = (data) => {
+  //edit user
+  return axios.put("/api/user", data);
 };
 export const getUserWebsiteID = () => {
   // active IDs
@@ -66,13 +72,14 @@ export const verifyOTP = (data) => {
 };
 
 export const checkNumber = (data) => {
+  //check number exits or not
   return axios.post("/api/verify-mobile", data);
 };
 export const registerOTP = (data) => {
   return axios.post("/api/otp/register", data);
 };
-export const getComplaint = () => {
-  return axios.get("/api/user/complaints");
+export const getComplaint = (data) => {
+  return axios.post("/api/user/complaints", data);
 };
 
 export const getLearn = () => {
